@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block titre %}
+    Accueil
+{% endblock %}
+
+{% block body %}
+    <div class="panel">
+        <button type="button" class="btn btn-light btn-accueil" onclick="location.href = '/projets';" > <i class="far fa-paper-plane"></i><br/> Projets</button>
+        <button type="button" class="btn btn-light btn-accueil"><i class="fas fa-check"></i><br/> Tâches</button>
+        <button type="button" class="btn btn-light btn-accueil" onclick="location.href = '/parametres';" ><i class="fas fa-cogs"></i><br/> Statuts</button>
+        <button type="button" class="btn btn-light btn-accueil" onclick="location.href = '/enonce';" ><i class="far fa-file-alt"></i><br/> Enoncé</button>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('accueil') }}
+{% endblock %}
+
+
+

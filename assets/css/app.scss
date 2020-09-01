@@ -1,0 +1,78 @@
+@import "~bootstrap/scss/bootstrap";
+@import "Loader";
+
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+$background-body : #ecf1f5;
+$btn-accueil : #007bff!important;
+body{
+  background: $background-body;
+  font-size: 0.9rem;
+  /*overflow: hidden;*/
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  .container{
+    background : #FFFFFF;
+    padding: 15px;
+    /*height: 700px;*/
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+
+    .panel{
+      height: 100%;
+      width:100%;
+      display: flex !important;
+      align-items: center !important;
+
+      .btn-accueil{
+        height: 30%;
+        width:30%;
+        margin: 5px;
+        font-size: 30px;
+        color: $btn-accueil;
+        border-color: #dee2e6;
+      }
+    }
+  }
+  form{
+    label.required:after {
+      content: "*";
+      color: red;
+    }
+  }
+  code {
+    background-color: #000000;
+    border: 1px solid #000000;
+    display: block;
+
+    color: #FFFFFF;
+    .token.keyword {
+      color: rgb(197, 165, 197);
+    }
+    .token.function {
+      color: rgb(121, 182, 242);
+    }
+    .token.punctuation{
+      color: rgb(136, 198, 190);
+    }
+    .token.atrule, .token.class-name {
+      color: rgb(250, 200, 99);
+    }
+    .token.tag {
+      color: rgb(252, 146, 158);
+    }
+    .nt {
+      color: #ccc;
+    }
+    .s, .s1, .s2, .sb, .sc, .se, .sh, .si, .sr, .ss, .sx {
+      color: #56db3a;
+    }
+    .n, .na, .nb, .nc, .nf, .nn, .no, .nv, .nx {
+      color: #fff;
+    }
+    .k, .kc, .kd, .kn, .kp, .kr, .kt {
+      color: #ff8400;
+    }
+
+  }
+}
