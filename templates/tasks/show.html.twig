@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}
+    <a href="/tasks">Retour</a>
+{% endblock %}
+
+{% block body %}
+    <h1>Tasks</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ task.id }}</td>
+                <td>{{ task.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tasks_index') }}">back to list</a>
+
+    <a href="{{ path('tasks_edit', {'id': task.id}) }}">edit</a>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('statement') }}
+{% endblock %}
