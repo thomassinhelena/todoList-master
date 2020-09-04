@@ -31,6 +31,8 @@ class TasksType extends AbstractType
                     'En attente' => 'En attente',
                     'A faire' => 'A faire',
                     'En cours' => 'En cours',
+                    'Terminée' => 'Terminée',
+                    'Cloturée' => 'Cloturée',
                 ]
             ])
         ;
