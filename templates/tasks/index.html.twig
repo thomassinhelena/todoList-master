@@ -6,24 +6,22 @@
 
 {% block body %}
     <div>
-        <button class="btn btn-sm btn-primary" title="Ajouter" data-id="0"  data-label="">Ajouter</button>
+        <button class="btn btn-sm btn-primary edit-tasks" title="Ajouter" data-id="0"  data-label="">Ajouter</button>
     </div>
     <div class="table-responsive">
         <table class="table table-sm table-hover table-striped">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Libellé</>
-                    <th>Tâches</th>
+                    <th class="text-center">Tâches</th>
                     <th class="text-right">actions</th>
                 </tr>
             </thead>
             <tbody>
             {% for task in tasks %}
-                <tr>
-                    <td>{{ task.id }}</td>
+                <tr id="row-{{task.id }}">
                     <td>{{ task.name }}</td>
-                    <td>
+                    <td class="text-center">0</td>
                     <td class="text-right">
                         <button class="btn btn-success btn-sm edit-tasks" title="Modifier"  data-type="tasks">
                             <i class="fas fa-pen"></i>
@@ -31,15 +29,11 @@
                         <button class="btn btn-danger btn-sm remove-tasks" title="Supprimer"><i class="far fa-trash-alt"></i></button>
                     </td>
                 </tr>
-            {% else %}
-                <tr>
-                    <td colspan="2">no records found</td>
-                </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
-    <a href="{{ path('tasks_new') }}">Create new</a>
+    {# <a href="{{ path('tasks_new') }}">Create new</a> #}
 {% endblock %}
 
 {% block javascripts %}
