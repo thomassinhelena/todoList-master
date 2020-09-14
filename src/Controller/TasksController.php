@@ -27,7 +27,10 @@ class TasksController extends AbstractController
     }
     
     /**
-     * @Route("/tasks", name="tasks_index", methods={"GET"})
+     * @Route("/tasks",
+     * name="_tasks",
+     * options={"expose": true},
+     * methods={"GET"})
      */
     public function index(TasksRepository $tasksRepository): Response
     {
@@ -37,8 +40,8 @@ class TasksController extends AbstractController
     }
 
     /**
-     * @Route("/tâche/{idTasks}/edition",
-     *     name="tasks_edit",
+     * @Route("/tasks/{idTasks}/edition",
+     *     name="_tasks_edit",
      *     options={"expose": true},
      *     methods={"GET","POST","PUT"},
      *     requirements={"idTasks" : "\d+"})
@@ -47,10 +50,10 @@ class TasksController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function edit(Project $tasks,Request $request):Response{
+    public function edit(Tasks $tasks,Request $request):Response{
 
         $idTasks = $tasks->getId() === null ? 0: $tasks->getId();
-        $form = $this->createForm(ProjectType::class, $tasks,["action"=>$this->generateUrl("_tasks_edit",["idTasks"=>$idTasks])]);
+        $form = $this->createForm(TasksType::class, $tasks,["action"=>$this->generateUrl("_tasks_edit",["idTasks"=>$idTasks])]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -59,7 +62,7 @@ class TasksController extends AbstractController
             return $this->redirectToRoute('_tasks');
 
         }else{
-            return $this->render('tasks/tasks-edit.html.twig', ["form"=>$form->createView()]);
+            return $this->render('tasks/edit.html.twig', ["form"=>$form->createView()]);
         }
 
     }

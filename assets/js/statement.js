@@ -17,8 +17,8 @@ $(function() {
 
   function openModal(){
     const idTasks = this.getAttribute("data-id");
-    const labelTask = this.getAttribute("data-label");
-    const url = "/tâches/"+idTasks+"/edition";
+    const labelTasks = this.getAttribute("data-label");
+    const url = "/tasks/"+idTasks+"/edition";
 
     $("#modal-edit").modal("show");
 
