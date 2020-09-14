@@ -19,6 +19,10 @@ class TasksRepository extends ServiceEntityRepository
         parent::__construct($registry, Tasks::class);
     }
 
+    public function findId(int $idTask){
+        return $this->find($idTask) ?? new Tasks();
+    }
+
     // /**
     //  * @return Tasks[] Returns an array of Tasks objects
     //  */

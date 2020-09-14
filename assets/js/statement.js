@@ -41,7 +41,7 @@ $(function() {
 
   function removeTask(){
     const idTasks = this.getAttribute("data-id");
-    const url = "/tâches/"+idTasks+"/suppression";
+    const url = "/tasks/"+idTasks+"/suppression";
 
     let element = document.getElementById("container-loader");
     element.classList.toggle("invisible");
